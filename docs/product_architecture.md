@@ -1,10 +1,10 @@
 # Grace Mashudi — Product Architecture
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Draft  
 **Product Type:** Personal Developer Portfolio  
 **Platforms:** Web  
-**Primary Users:** Recruiters, hiring managers, founders, collaborators
+**Primary Users:** Peers, mentors, and anyone who wants an honest picture of what Grace is learning
 
 **Related:** [technical_architecture.md](technical_architecture.md) · [sprint.md](sprint.md)
 
@@ -24,19 +24,19 @@ This product is **not** a clone.
 
 # 1. Product Overview
 
-Grace Mashudi’s portfolio is a **personal product website** designed to help a visitor decide, quickly, whether to hire or contact a backend-focused full-stack engineer.
+Grace Mashudi’s portfolio is a **personal product website** that says, quickly and honestly, where she is in her learning.
 
 The product is designed around a simple idea:
 
-> **Turn a résumé into a clear, scannable story of who Grace is, how she works, and what she has shipped.**
+> **Turn a start in tech into a clear story of what Grace knows, how she learns, and the one project she has finished.**
 
 Instead of a PDF, a GitHub profile, and a scattered set of demo links, the site provides one workspace where a visitor can:
 
 - Read a positioning statement in seconds
-- See location, availability, and current focus
-- Understand a working process
-- Scan skills against a hiring need
-- Review featured products and supporting work
+- See location, current focus, and that she is learning
+- Understand how she approaches a problem
+- Scan the skills she actually has
+- Review the work she has finished, and nothing invented
 - Send a message without leaving the page
 
 The site should feel like a **real professional product**, rather than a template with placeholder lorem.
@@ -47,7 +47,7 @@ The site should feel like a **real professional product**, rather than a templat
 
 ### Vision
 
-To give Grace a durable public surface that presents her as a backend-focused full-stack engineer who builds systems that keep working after the demo.
+To give Grace a durable public surface that presents her as someone early in the journey: learning Java, knowing a little TypeScript, optimistic, and honest about the one project she has finished.
 
 ### Mission
 
@@ -67,11 +67,11 @@ No path to contact
 to:
 
 ```text
-Clear offer
+Clear picture of what she is learning
         ↓
-Known stack and process
+Known skills and process
         ↓
-Live, documented builds
+One finished project, named when it is real
         ↓
 A message sent
 
@@ -81,7 +81,7 @@ A message sent
 
 # 3. Problem Statement
 
-Engineers looking for full-time or contract work are often evaluated from:
+Someone at the start of a tech journey is easy to misread if the only public traces are:
 
 - A CV attached to an email
 - A LinkedIn summary
@@ -93,11 +93,11 @@ This creates several problems.
 
 ### 3.1 Weak first impression
 
-A recruiter may not immediately know:
+A visitor may not immediately know:
 
-- What Grace actually builds
-- Whether she is backend, frontend, or both
-- Whether she is available
+- What Grace is actually learning
+- That she is early, not a specialist
+- That her status is learning, not open to work
 - Where she is based
 
 ### 3.2 Proof is fragmented
@@ -126,10 +126,10 @@ They are screening for a role.
 
 ### Needs
 
-- Role fit in the first screen
-- Stack match
-- Availability
-- Two or three credible projects
+- An honest picture of her level in the first screen
+- A stack that matches what she really knows
+- A visible learning status
+- The one finished project, named when it is real
 - A way to reach out
 
 ### Primary need
@@ -144,8 +144,8 @@ They are considering contract or product work.
 
 ### Needs
 
-- What Grace can take on (APIs, data models, full-stack apps, integrations)
-- Evidence of production thinking, not only tutorials
+- What Grace is practicing (Java, and a little TypeScript)
+- Evidence of one finished project, not a consultancy menu
 - A contact form that does not require an account
 
 ### Primary need
@@ -195,7 +195,7 @@ Grace Mashudi Portfolio
 ├── Site chrome
 │     ├── Wordmark
 │     ├── Section navigation
-│     ├── Open-to-work status
+│     ├── Learning status
 │     ├── Nairobi local time
 │     └── Theme (dark-first)
 ├── Hero
@@ -238,7 +238,7 @@ Act (open a project or contact)
 - Skip to content
 - Sticky header on desktop
 - Anchor links: About, Process, Skills, Work, Contact
-- “Open to work” (or a later “Not looking” flag) as a visible status, not buried copy
+- A visible status from `site.ts` (currently “Learning”, not open to work), not buried copy
 - Local time for **Africa/Nairobi**, updated in the client
 - Dark-first visual language; a light theme is a later option, not MVP-blocking
 
@@ -258,18 +258,18 @@ Its purpose is to answer:
 
 ```text
 Name
-Headline (one sentence, backend-led)
+Headline (one sentence: early in the journey)
 Supporting paragraph
-Availability
+Status (learning, not a hire-me pitch)
 Primary CTA → Contact
 Secondary CTA → Featured work
-Working-with chips (stack she actually uses)
+Working-with chips (Java, TypeScript — only what she actually uses)
 
 ```
 
 ### Default positioning (editable)
 
-Grace is a **backend-focused full-stack engineer**. She designs REST APIs, models relational data, and debugs the problems between the database and the browser. Day to day: Flask, FastAPI, PostgreSQL, and React, with a growing focus on data-driven problem solving. Available for full-time roles and contract work.
+Grace is **at the start of her tech journey**. She is learning Java and knows a little TypeScript. One project went well. She is optimistic about learning more, and the page must not claim a stack she has not used. She is not presented as open to full-time or contract work.
 
 Headline, bio, and chips live in content files. They are not hardcoded into layout components.
 
@@ -277,20 +277,20 @@ Headline, bio, and chips live in content files. They are not hardcoded into layo
 
 # 9. About + facts row
 
-About explains the same offer in slightly more depth, then pins facts a recruiter will scan.
+About explains how she learns, then pins facts a visitor can scan. It should not repeat the hero word for word.
 
 ### Facts
 
 ```text
 Based in     Nairobi, Kenya
-Focus        Backend & API design
-Stack        Python · Flask · PostgreSQL · React
-Now          TODO — current learning or work focus
-Status       Open to full-time & contract
+Focus        Learning Java
+Stack        Java · TypeScript (basics)
+Now          Early in the journey
+Status       Learning
 
 ```
 
-About should not repeat the hero word for word. It should add *how* she works: starting from environments and schemas, iterating until endpoints behave, writing interfaces only as far as the system needs.
+About should add *how* she learns: small programs, reading errors, and caring that the one project actually finished.
 
 ---
 
@@ -307,90 +307,52 @@ A five-step process, always in this order:
 
 ```
 
-Each step has a short original paragraph. The module exists to show discipline, not to invent a methodology brand.
+Each step has a short original paragraph in a beginner’s voice: how she learns and builds, not a senior delivery pitch. The module exists to show how she practices, not to invent a methodology brand.
 
 ---
 
 # 11. Skills & tech stack
 
-Skills are grouped so a hiring manager can match a job spec.
+Skills are grouped so a visitor can see what she actually knows. Do not add a language or tool to look hire-ready.
 
 ```text
-Backend Development
-Databases
-Frontend
-Tools & Workflow
-
-```
-
-### Backend (starting set, editable)
-
-```text
-Python
-Flask (app factory, blueprints)
-FastAPI
-RESTful API design
-JWT authentication & authorization
-SQLAlchemy / similar ORMs
-Database migrations
-File upload integration
-
-```
-
-### Databases
-
-```text
-PostgreSQL
-SQLite
-Relational data modeling
-Foundational query optimization
-
-```
-
-### Frontend
-
-```text
-React
+Java
 TypeScript
-JavaScript (ES6+)
-Tailwind CSS
-Responsive UI
-API integration (fetch)
 
 ```
 
-### Tools
+### Java
 
 ```text
-Git & GitHub
-Linux / CLI
-Postman / API testing
-Debugging & error tracing
-Netlify / Render-style deploys
-Collaborative PR workflow
+Java
 
 ```
 
-Skills are a list, not a percentage bar. Bars imply a false precision this product does not claim.
+### TypeScript
+
+```text
+TypeScript (a little, still learning)
+
+```
+
+The site’s own runtime (React, Vite, Tailwind) is not a skill on this list. Skills are a list, not a percentage bar. Bars imply a false precision this product does not claim.
 
 ---
 
 # 12. Services
 
-“What I help with” is a commercial translation of the skills.
+“What I’m practicing” is an honest translation of the skills. It is not a consultancy menu.
 
 Starting set:
 
 ```text
-Backend & API development
-Full-stack web applications
-API & payment / media integration
-Developer tooling & automation
-Technical consulting for MVPs
+Learning Java by building
+Practicing TypeScript
+Finishing work
 
 ```
 
-Each card: a title and two or three sentences of original copy. No fake client logos.
+Each card: a title and two or three sentences of original copy. No fake client logos, and no offer she is not ready to make.
 
 ---
 
@@ -409,17 +371,17 @@ One-line outcome
 Short description
 Role (if not solo)
 Stack chips
-Live URL          TODO
-Source URL        TODO
+Live URL          none (desktop app, not hosted)
+Source URL        https://github.com/gracemashudi3-sys/Bank
 Image / screenshot TODO
 
 ```
 
 ### Slots (content, not architecture)
 
-The architecture assumes **three featured cards** on the first version. Names, stories, and URLs are `TODO` until Grace fills [src/content](../src/content) (created in sprint Phase 0).
+Show only real projects. Do not pad the grid to three cards. The first version has **one** finished project: Bank, a Java Swing desktop app with a local MySQL database. [src/content/projects.ts](../src/content/projects.ts) links the GitHub source only. There is no live URL.
 
-Do not invent live products. Empty slots with honest placeholders are better than borrowed case studies.
+Do not invent live products. Hide the more-work table while no `featured: false` records exist.
 
 ---
 
@@ -487,7 +449,7 @@ Email    required, valid
 Message  required
 ```
 
-Optional: “Prefer email?” with `TODO_EMAIL` as a mailto fallback.
+Optional: “Prefer email?” with gracemashudi3@gmail.com as a mailto fallback.
 
 There is no account, no captcha in MVP unless spam appears, and no file upload.
 
@@ -542,11 +504,11 @@ Example:
 ```text
 Visitor lands on hero
        ↓
-Understands backend-led offer
+Understands she is early and learning Java
        ↓
 Scans process and skills
        ↓
-Opens a live project
+Sees the one finished project, with links only if they are real
        ↓
 Sends a message
        ↓
@@ -617,7 +579,7 @@ Surface         slightly lifted cards
 Ink             off-white
 Muted           secondary labels
 Accent          one brand colour (chosen in implementation, not copied from the reference)
-Status          open-to-work as a small, readable pill
+Status          Learning as a small, readable pill
 
 ```
 
@@ -656,10 +618,10 @@ A page with no projects still ships: hero, about, process, skills, services, con
 # 24. SEO and sharing
 
 ```text
-Document title     Grace Mashudi — Full-Stack Engineer
-Meta description   TODO, one or two sentences from the hero
-Canonical URL      production Netlify URL
-Open Graph         title, description, TODO image
+Document title     Grace Mashudi — Learning Java and TypeScript
+Meta description   Grace Mashudi is in Nairobi, at the start of her tech journey. She is learning Java, knows a little TypeScript, and has finished Bank, a Java desktop project.
+Canonical URL      production Netlify URL (unset until Phase 7)
+Open Graph         title and description in index.html; image still TODO
 Favicon            original mark
 
 ```
@@ -691,7 +653,7 @@ CRUD is not the product. The product is a **decision surface**.
 ```text
 Single-page layout
 Sticky / usable navigation
-Open-to-work + Nairobi time
+Learning status + Nairobi time
 Hero with original copy
 About + facts
 Five-step process
@@ -700,7 +662,7 @@ Services cards
 Project content model (even if only TODOs)
 Featured cards + more-work table (hide if empty)
 Contact form to Grace’s inbox
-Footer with social TODOs
+Footer with GitHub; LinkedIn omitted until a real URL exists
 Responsive layout
 Accessible form and headings
 Netlify production URL
@@ -751,9 +713,9 @@ Send a message
 
 ### Demo success (first minute)
 
-1. **This engineer knows her offer** — hero + facts.
-2. **This engineer ships products** — featured work.
-3. **This engineer is reachable** — contact.
+1. **A visitor can tell she is starting out** — hero + facts.
+2. **The proof is one finished project** — featured work, not a padded grid.
+3. **She is reachable** — contact.
 
 ---
 
@@ -761,7 +723,7 @@ Send a message
 
 The site should be presented as:
 
-> **A backend-focused full-stack engineer’s public product: systems, process, and shipped work, with a path to hire.**
+> **An early-career learner’s public page: Java, a little TypeScript, one finished project, and a path to talk.**
 
 Rather than:
 

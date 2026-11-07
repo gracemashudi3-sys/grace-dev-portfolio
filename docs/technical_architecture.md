@@ -58,7 +58,7 @@ pnpm preview
 
 ### 2.6 Honesty of stack
 
-The **site** is React + Vite + TypeScript + Tailwind. The **story Grace tells** (Python, Flask, PostgreSQL, React) is content. The two must not be confused in the README.
+The **site** is React + Vite + TypeScript + Tailwind. The **story Grace tells** (learning Java, and a little TypeScript) is content. The two must not be confused in the README.
 
 ---
 
@@ -104,25 +104,27 @@ grace-dev-portfolio/
 │   └── sprint.md
 │
 ├── public/
-│   ├── favicon.svg          TODO original mark
-│   └── og-image.png         TODO
+│   ├── favicon.svg
+│   └── og-image.png         still missing
 │
 ├── src/
 │   ├── content/
+│   │   ├── types.ts
 │   │   ├── site.ts
 │   │   ├── hero.ts
 │   │   ├── about.ts
 │   │   ├── process.ts
 │   │   ├── skills.ts
 │   │   ├── services.ts
-│   │   └── projects.ts
+│   │   ├── projects.ts
+│   │   └── contact.ts
 │   ├── components/
 │   │   ├── layout/
 │   │   ├── ui/
 │   │   └── sections/
 │   ├── lib/
 │   │   ├── time.ts          Nairobi clock
-│   │   └── cn.ts            class merge if needed
+│   │   └── projects.ts      featured vs rest
 │   ├── styles/
 │   │   └── index.css        Tailwind entry + tokens
 │   ├── App.tsx
@@ -139,7 +141,7 @@ grace-dev-portfolio/
 
 ```
 
-There is no `apps/` monorepo and no `packages/` workspace in MVP. One app is the whole product.
+There is no `apps/` monorepo and no `packages/` workspace in MVP. One app is the whole product. `cn.ts` is not in the repo; class merging was not needed.
 
 ---
 
@@ -178,7 +180,8 @@ Example shapes (normative intent, exact fields may gain optionals):
 ```text
 Site
   name, title, role, location, timezone, status
-  email (TODO), socials (github, linkedin, … TODO)
+  email (gracemashudi3@gmail.com in site.ts)
+  socials (github set; linkedin omitted until a real URL exists)
   documentTitle, description
 
 Project
@@ -284,7 +287,8 @@ Visitor
 Netlify form detection (build) / AJAX POST (SPA)
   │
   ▼
-Netlify notification email → TODO_EMAIL
+Netlify notification email → gracemashudi3@gmail.com
+  (address is in site.ts; the Netlify notification setting is still unset)
 
 ```
 
@@ -410,10 +414,11 @@ Auth, RBAC, CORS on an API, session cookies, rate limits on application routes. 
 
 ```text
 index.html
-  title (can be overwritten in a small head helper)
+  title
   meta description
-  og:title og:description og:image
+  og:title og:description
   twitter:card
+  og:image still absent until public/og-image.png exists
 
 ```
 
@@ -450,9 +455,11 @@ Netlify production: `pnpm build`, publish directory `dist`.
           ▼                           ▼
      Static CDN                    Forms
      (HTML, JS, CSS,               notifications
-      images)                      to TODO_EMAIL
+      images)                      to gracemashudi3@gmail.com
 
 ```
+
+The address is in `site.ts`. The Netlify notification setting is still unset.
 
 ### `netlify.toml` (intent)
 
@@ -460,6 +467,9 @@ Netlify production: `pnpm build`, publish directory `dist`.
 [build]
   command = "pnpm build"
   publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22.12.0"
 
 # SPA fallback only if client routes exist (Phase 8)
 ```

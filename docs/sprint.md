@@ -68,28 +68,28 @@ Anything not marked `[x]` has **not** been built.
 
 ### Repository
 
-- [ ] Initialize Vite React + TypeScript app at the repository root (keep `docs/` and `LICENSE`)
-- [ ] Add pnpm (`package.json` packageManager if useful)
-- [ ] Configure Tailwind CSS
-- [ ] Configure path-friendly `src/` layout from [technical_architecture.md](technical_architecture.md) §4
-- [ ] Add `.gitignore` (node_modules, dist, .env, OS junk)
-- [ ] Add `.env.example` (may be empty of secrets; document any `VITE_` later)
-- [ ] Choose Biome **or** ESLint + Prettier and wire `pnpm lint`
-- [ ] Add `pnpm typecheck` (`tsc --noEmit`)
-- [ ] Add `netlify.toml` with build command and `dist` publish dir
-- [ ] Replace the one-line README with install, scripts, stack, and content-edit instructions
+- [x] Initialize Vite React + TypeScript app at the repository root (keep `docs/` and `LICENSE`)
+- [x] Add pnpm (`package.json` packageManager if useful)
+- [x] Configure Tailwind CSS
+- [x] Configure path-friendly `src/` layout from [technical_architecture.md](technical_architecture.md) §4
+- [x] Add `.gitignore` (node_modules, dist, .env, OS junk)
+- [x] Add `.env.example` (may be empty of secrets; document any `VITE_` later)
+- [x] Choose Biome **or** ESLint + Prettier and wire `pnpm lint`
+- [x] Add `pnpm typecheck` (`tsc --noEmit`)
+- [x] Add `netlify.toml` with build command and `dist` publish dir
+- [x] Replace the one-line README with install, scripts, stack, and content-edit instructions
 
 ### Content model
 
-- [ ] Create `src/content/site.ts`
-- [ ] Create `src/content/hero.ts`
-- [ ] Create `src/content/about.ts`
-- [ ] Create `src/content/process.ts`
-- [ ] Create `src/content/skills.ts`
-- [ ] Create `src/content/services.ts`
-- [ ] Create `src/content/projects.ts`
-- [ ] Export shared types (Site, Project, SkillGroup, …)
-- [ ] Fill draft copy for Grace (backend-focused, Nairobi, open to work); keep URLs, email, and project names as `TODO` until real values exist
+- [x] Create `src/content/site.ts`
+- [x] Create `src/content/hero.ts`
+- [x] Create `src/content/about.ts`
+- [x] Create `src/content/process.ts`
+- [x] Create `src/content/skills.ts`
+- [x] Create `src/content/services.ts`
+- [x] Create `src/content/projects.ts`
+- [x] Export shared types (Site, Project, SkillGroup, …)
+- [x] Fill draft copy for Grace (early in the journey, learning Java and a little TypeScript, Nairobi); keep URLs, email, and the project name as `TODO` until real values exist
 
 ### Acceptance criteria
 
@@ -107,20 +107,20 @@ Anything not marked `[x]` has **not** been built.
 
 ### Tokens
 
-- [ ] Define canvas, surface, ink, muted, accent, border in CSS
-- [ ] Dark-first default
-- [ ] Base typography and section spacing
-- [ ] Remove Vite/React default styles from the visible page
+- [x] Define canvas, surface, ink, muted, accent, border in CSS
+- [x] Dark-first default
+- [x] Base typography and section spacing
+- [x] Remove Vite/React default styles from the visible page
 
 ### Chrome
 
-- [ ] Skip-to-content link
-- [ ] Header with wordmark
-- [ ] Anchor nav: About, Process, Skills, Work, Contact
-- [ ] Open-to-work status from `site.ts`
-- [ ] Nairobi time from `src/lib/time.ts` (`Africa/Nairobi`)
-- [ ] Footer shell (socials may still be TODO)
-- [ ] Responsive header (usable under ~640px)
+- [x] Skip-to-content link
+- [x] Header with wordmark
+- [x] Anchor nav: About, Process, Skills, Work, Contact
+- [x] Status pill from `site.ts` (Learning, not an open-to-work badge)
+- [x] Nairobi time from `src/lib/time.ts` (`Africa/Nairobi`)
+- [x] Footer shell (socials may still be TODO)
+- [x] Responsive header (usable under ~640px)
 
 ### Acceptance criteria
 
@@ -137,17 +137,17 @@ Anything not marked `[x]` has **not** been built.
 
 ### Hero
 
-- [ ] Name, headline, supporting paragraph from content
-- [ ] Primary CTA to `#contact`
-- [ ] Secondary CTA to `#work`
-- [ ] Working-with chips from content
-- [ ] Layout works at desktop and phone widths
+- [x] Name, headline, supporting paragraph from content
+- [x] Primary CTA to `#contact`
+- [x] Secondary CTA to `#work`
+- [x] Working-with chips from content
+- [x] Layout works at desktop and phone widths
 
 ### About
 
-- [ ] About copy (not a duplicate of the hero)
-- [ ] Facts row: based in, focus, stack, now, status
-- [ ] Section id `#about`
+- [x] About copy (not a duplicate of the hero)
+- [x] Facts row: based in, focus, stack, now, status
+- [x] Section id `#about`
 
 ### Acceptance criteria
 
@@ -163,20 +163,20 @@ Anything not marked `[x]` has **not** been built.
 
 ### Process
 
-- [ ] Five steps from `process.ts`
-- [ ] Numbered, readable on a phone
-- [ ] Section id `#process`
+- [x] Five steps from `process.ts`
+- [x] Numbered, readable on a phone
+- [x] Section id `#process`
 
 ### Skills
 
-- [ ] Four groups: Backend, Databases, Frontend, Tools
-- [ ] List presentation (no percentage bars)
-- [ ] Section id `#skills`
+- [x] Two groups: Java, and TypeScript (basics). Do not restore a hire-ready stack.
+- [x] List presentation (no percentage bars)
+- [x] Section id `#skills`
 
 ### Services
 
-- [ ] Service cards from `services.ts`
-- [ ] Section id `#services` (may share Skills nav; still a distinct block)
+- [x] Service cards from `services.ts`
+- [x] Section id `#services` (may share Skills nav; still a distinct block)
 
 ### Acceptance criteria
 
@@ -192,18 +192,18 @@ Anything not marked `[x]` has **not** been built.
 
 ### Data
 
-- [ ] Split helper: featured vs rest (or inline filter)
-- [ ] Three featured slots and a table list in `projects.ts` (TODO names allowed)
+- [x] Split helper: featured vs rest (or inline filter)
+- [x] One featured project in `projects.ts` (a `TODO` name is allowed). Do not pad with empty cards.
 
 ### UI
 
-- [ ] Featured card grid
-- [ ] Stack chips, summary, optional live/source links (omit if unset)
-- [ ] Image with fallback if `imageSrc` missing or broken
-- [ ] More-work table on desktop
-- [ ] Stacked rows on small screens
-- [ ] Hide featured grid if none featured; hide table if none remain
-- [ ] Section id `#work`
+- [x] Featured card grid
+- [x] Stack chips, summary, optional live/source links (omit if unset)
+- [x] Image with fallback if `imageSrc` missing or broken
+- [x] More-work table on desktop
+- [x] Stacked rows on small screens
+- [x] Hide featured grid if none featured; hide table if none remain
+- [x] Section id `#work`
 
 ### Acceptance criteria
 
@@ -219,24 +219,24 @@ Anything not marked `[x]` has **not** been built.
 
 ### Contact
 
-- [ ] Section copy + form: name, email, message
-- [ ] Netlify Forms wiring (hidden form in HTML and/or AJAX POST documented)
-- [ ] Honeypot field
-- [ ] Client-side required / email checks
-- [ ] Submitting / success / error states
-- [ ] Mailto fallback using `TODO_EMAIL` until replaced
-- [ ] Section id `#contact`
+- [x] Section copy + form: name, email, message
+- [x] Netlify Forms wiring (hidden form in HTML and/or AJAX POST documented)
+- [x] Honeypot field
+- [x] Client-side required / email checks
+- [x] Submitting / success / error states
+- [x] Mailto fallback using gracemashudi3@gmail.com
+- [x] Section id `#contact`
 
 ### Footer
 
-- [ ] Wordmark, short line, social slots from `site.ts`
-- [ ] Copyright year
+- [x] Wordmark, short line, social slots from `site.ts`
+- [x] Copyright year
 
 ### Acceptance criteria
 
-- Form is tested on a **Netlify deploy preview**, not only locally
-- Success is obvious
-- Field errors are associated with inputs
+- [ ] Form is tested on a **Netlify deploy preview**, not only locally
+- [x] Success is obvious
+- [x] Field errors are associated with inputs
 
 ---
 
@@ -246,21 +246,21 @@ Anything not marked `[x]` has **not** been built.
 
 ### UX
 
-- [ ] Section enter motion with `prefers-reduced-motion` respected
-- [ ] Hover/focus on cards and buttons
-- [ ] Empty work sections stay hidden
-- [ ] Contact success copy is calm and specific
+- [x] Section enter motion with `prefers-reduced-motion` respected
+- [x] Hover/focus on cards and buttons
+- [x] Empty work sections stay hidden
+- [x] Contact success copy is calm and specific
 
 ### Accessibility
 
-- [ ] Heading order check
-- [ ] Contrast check on chips and muted text
-- [ ] Focus visible on all interactive elements
-- [ ] `html lang`
+- [x] Heading order check
+- [x] Contrast check on chips and muted text
+- [x] Focus visible on all interactive elements
+- [x] `html lang`
 
 ### Assets
 
-- [ ] Original favicon (not the Vite logo)
+- [x] Original favicon (not the Vite logo)
 - [ ] Optional OG image (`TODO` until designed)
 
 ### Acceptance criteria
@@ -279,14 +279,14 @@ Anything not marked `[x]` has **not** been built.
 - [ ] Connect the GitHub repo
 - [ ] `pnpm` build on Netlify (document Node version if needed)
 - [ ] Confirm `dist` publish
-- [ ] Form notifications to Grace’s real inbox (replace `TODO_EMAIL`)
+- [ ] Form notifications to gracemashudi3@gmail.com (address is in `site.ts`; the Netlify notification is not set yet)
 - [ ] Production URL recorded in the README
 
 ### Docs
 
 - [ ] README: scripts, how to edit content, how forms work
 - [ ] Mark sprint items `[x]` as they ship
-- [ ] Product/tech versions stay 1.0 until a decision changes
+- [ ] Product stays 1.1 and technical stays 1.0 until a decision changes
 
 ### Acceptance criteria
 
@@ -351,7 +351,7 @@ Use these when showing the site:
 
 ### Stack (the engineer)
 
-> “The skills on the page are the work I want to be hired for — APIs, PostgreSQL, React — which is not the same as this site’s static stack.”
+> “The skills on the page are what I actually know — Java, and a little TypeScript — which is not the same as this site’s static stack.”
 
 ### Original work
 
@@ -384,7 +384,7 @@ Public URL
 
 The MVP must demonstrate:
 
-- Clear backend-led positioning
+- Clear early-journey positioning: learning Java, a little TypeScript, one finished project
 - Original copy
 - Typed content
 - Responsive layout
@@ -411,24 +411,57 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-10-28 — against the working tree: `docs/` only. No application code yet.
+**Last verified:** 2026-11-07 — The contact address in `site.ts` is gracemashudi3@gmail.com, so the mailto fallback can render. LinkedIn is omitted until a real profile URL exists. `index.html` has Open Graph title and description tags. There is no Open Graph image. `pnpm build` succeeds. `origin/main` contains only `LICENSE`, `README.md`, and `docs/`. The app files are still untracked, so connecting Netlify to GitHub cannot publish this site until those files are committed and pushed. The contact form has not been tested on a deploy preview, and Phase 7 is not started.
 
 ## Phase 0 — Foundation
 
-- [ ] Vite app
-- [ ] Tailwind
-- [ ] pnpm scripts
-- [ ] Content modules
-- [ ] netlify.toml
-- [ ] README beyond one line
+- [x] Vite app
+- [x] Tailwind
+- [x] pnpm scripts
+- [x] Content modules
+- [x] netlify.toml
+- [x] README beyond one line
 
-## Phases 1–8
+## Phase 1 — Chrome and tokens
+
+- [x] Tokens, skip link, header, nav, status, Nairobi time
+- [x] Footer shell and placeholder section ids
+
+## Phase 2 — Hero and about
+
+- [x] Hero from `hero.ts`
+- [x] About and facts from `about.ts`
+
+## Phase 3 — Process, skills, services
+
+- [x] Numbered process from `process.ts`
+- [x] Skill lists from `skills.ts`
+- [x] Service cards from `services.ts`, hidden when empty
+
+## Phase 4 — Work
+
+- [x] Featured and rest split in `src/lib/projects.ts`
+- [x] Bank featured card; more-work table hidden while empty
+
+## Phase 5 — Contact and footer
+
+- [x] Contact form, honeypot, and mailto fallback
+- [x] Footer copyright year
+- [ ] Netlify deploy-preview form test
+
+## Phase 6 — Polish
+
+- [x] Section enter motion, card and button hover, focus outline
+- [x] Heading order, contrast, `lang`, and favicon checked
+- [ ] Open Graph image
+
+## Phases 7–8
 
 - [ ] Not started
 
 ## Documentation (this slice)
 
-- [x] `docs/product_architecture.md` v1.0
+- [x] `docs/product_architecture.md` v1.1
 - [x] `docs/technical_architecture.md` v1.0
 - [x] `docs/sprint.md` v1.0
 
@@ -437,12 +470,16 @@ These should not block the first public URL:
 # 25. Immediate next steps
 
 ```text
-1. Phase 0 — scaffold Vite + Tailwind + content types
-2. Phase 1 — tokens and chrome (nav, status, Nairobi time)
-3. Phase 2 — hero and about
-4. Continue in order through Phase 7
-5. Fill TODO email, socials, and real projects before calling copy done
-6. Phase 8 only after a public URL exists
+1. Phase 0 — done (Vite, Tailwind, Biome, typed content)
+2. Phase 1 — done (tokens, nav, Learning status, Nairobi time)
+3. Phase 2 — done (hero and about)
+4. Phase 3 — done (process, skills, and services)
+5. Phase 4 — done (Bank featured card; more-work table hidden while empty)
+6. Phase 5 — form is built; still needs a Netlify deploy-preview test
+7. Phase 6 — done, except an Open Graph image
+8. Phase 7 — commit and push the app, connect Netlify, set the form notification, and test the form. `origin/main` still has only the docs.
+9. LinkedIn is omitted from `site.ts` until a real profile URL exists
+10. Phase 8 only after a public URL exists
 
 ```
 
