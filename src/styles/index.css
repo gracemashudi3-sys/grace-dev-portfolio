@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/*
+  Dark-first tokens. Names match the technical architecture.
+  Tailwind utilities read them through @theme inline.
+*/
+:root {
+  --canvas: #121410;
+  --surface: #1c1f1a;
+  --ink: #f4f1e8;
+  --muted: #c4bfb4;
+  --accent: #d08a4c;
+  --border: #3c4036;
+  --radius: 0.75rem;
+  --font-sans: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --section-space: 4rem;
+  --header-offset: 9.5rem;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --radius-md: var(--radius);
+}
+
+.section-block {
+  scroll-margin-top: var(--header-offset);
+  padding-inline: 1.25rem;
+  padding-block: var(--section-space);
+  animation: section-enter 480ms ease both;
+}
+
+main > .section-block:nth-child(2) {
+  animation-delay: 40ms;
+}
+
+main > .section-block:nth-child(3) {
+  animation-delay: 80ms;
+}
+
+main > .section-block:nth-child(4) {
+  animation-delay: 120ms;
+}
+
+main > .section-block:nth-child(5) {
+  animation-delay: 160ms;
+}
+
+main > .section-block:nth-child(6) {
+  animation-delay: 200ms;
+}
+
+main > .section-block:nth-child(7) {
+  animation-delay: 240ms;
+}
+
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.surface-card {
+  transition: border-color 160ms ease;
+}
+
+.surface-card:hover,
+.surface-card:focus-within {
+  border-color: var(--accent);
+}
+
+.btn {
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--ink);
+  color: var(--canvas);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --section-space: 6rem;
+    --header-offset: 6.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .section-block {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .surface-card,
+  .btn {
+    transition: none;
+  }
+}
