@@ -411,7 +411,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-07 — The contact address in `site.ts` is gracemashudi3@gmail.com, so the mailto fallback can render. LinkedIn is omitted until a real profile URL exists. `index.html` has Open Graph title and description tags. There is no Open Graph image. `pnpm build` succeeds. `origin/main` contains only `LICENSE`, `README.md`, and `docs/`. The app files are still untracked, so connecting Netlify to GitHub cannot publish this site until those files are committed and pushed. The contact form has not been tested on a deploy preview, and Phase 7 is not started.
+**Last verified:** 2026-11-07 — The contact address in `site.ts` is gracemashudi3@gmail.com, so the mailto fallback can render. LinkedIn is omitted until a real profile URL exists. `index.html` has Open Graph title and description tags. There is no Open Graph image. `pnpm build` succeeds. The app is committed and pushed on `cursor/align-docs-with-site` (`28a244f`). `origin/main` still does not contain the app. This machine has no Netlify login, so the site is not connected, the form has not been tested on a deploy preview, and Phase 7 is not started. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project.
 
 ## Phase 0 — Foundation
 
@@ -477,7 +477,7 @@ These should not block the first public URL:
 5. Phase 4 — done (Bank featured card; more-work table hidden while empty)
 6. Phase 5 — form is built; still needs a Netlify deploy-preview test
 7. Phase 6 — done, except an Open Graph image
-8. Phase 7 — commit and push the app, connect Netlify, set the form notification, and test the form. `origin/main` still has only the docs.
+8. Phase 7 — connect Netlify to `cursor/align-docs-with-site`, set the form notification, and test the form. The app is already on that branch. `origin/main` still does not contain it.
 9. LinkedIn is omitted from `site.ts` until a real profile URL exists
 10. Phase 8 only after a public URL exists
 
