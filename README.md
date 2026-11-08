@@ -1,5 +1,6 @@
 # grace-dev-portfolio
 
+
 Public portfolio for Grace Mashudi, who is early in her tech journey. She is learning Java and knows a little TypeScript. This repository is a static React app. The skills in the page copy are what she actually knows. They are not this site’s runtime.
 
 ## Stack
@@ -52,7 +53,13 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 
 ## Deploy
 
+ cursor/record-production-url
+Production: [https://gracemashudi3-sys-dev-portfolio.netlify.app/]
+
+`netlify.toml` builds with `pnpm build` and publishes `dist`. Netlify is set to Node 22.12.0, which matches `engines` in `package.json`. There is no SPA rewrite, because the MVP has no client routes.
+
 `netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. There is no SPA rewrite, because the MVP has no client routes.
+ main
 
 There are no required environment variables. `.env.example` notes the `VITE_` prefix if a public variable is added later. Do not put secrets in any `VITE_` variable.
 
@@ -62,4 +69,4 @@ Netlify detects forms from the published HTML. The React app does not render tha
 
 The visible form in `src/components/sections/Contact.tsx` checks the fields in the browser, then POSTs `application/x-www-form-urlencoded` to `/` with `form-name=contact`. A success response replaces the form with the thank-you. A network failure or non-OK response leaves the form in place and shows the error from `contact.ts`.
 
-`vite preview` serves static files only. Submit a test on a Netlify deploy preview before treating mail as delivered. Point Netlify’s form notification at gracemashudi3@gmail.com. The page renders a mailto link to that address.
+`vite preview` serves static files only. The live site at https://gracemashudi3-sys-dev-portfolio.netlify.app/ delivers the form, and Netlify sends notifications to gracemashudi3@gmail.com. A test submission from that site arrived. The page renders a mailto link to that address.
