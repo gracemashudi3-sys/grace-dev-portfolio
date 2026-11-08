@@ -289,6 +289,7 @@ Netlify form detection (build) / AJAX POST (SPA)
   ▼
 Netlify notification email → gracemashudi3@gmail.com
   (address is in site.ts; the Netlify notification setting is still unset)
+  
 
 ```
 
@@ -459,7 +460,7 @@ Netlify production: `pnpm build`, publish directory `dist`.
 
 ```
 
-The address is in `site.ts`. The Netlify notification setting is still unset.
+The address is in `site.ts`. Notifications are set to gracemashudi3@gmail.com. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/.
 
 ### `netlify.toml` (intent)
 
@@ -474,7 +475,7 @@ The address is in `site.ts`. The Netlify notification setting is still unset.
 # SPA fallback only if client routes exist (Phase 8)
 ```
 
-Custom domain is optional. The first production URL is the Netlify subdomain.
+Custom domain is optional. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/.
 
 Deploy previews on pull requests should be used to test the form, because `vite preview` does not run Netlify Forms.
 

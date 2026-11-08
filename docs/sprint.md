@@ -234,7 +234,7 @@ Anything not marked `[x]` has **not** been built.
 
 ### Acceptance criteria
 
-- [ ] Form is tested on a **Netlify deploy preview**, not only locally
+- [x] Form is tested on a **Netlify deploy preview**, not only locally
 - [x] Success is obvious
 - [x] Field errors are associated with inputs
 
@@ -261,7 +261,7 @@ Anything not marked `[x]` has **not** been built.
 ### Assets
 
 - [x] Original favicon (not the Vite logo)
-- [ ] Optional OG image (`TODO` until designed)
+- [x] Optional OG image (`TODO` until designed)
 
 ### Acceptance criteria
 
@@ -276,17 +276,21 @@ Anything not marked `[x]` has **not** been built.
 
 ### Netlify
 
-- [ ] Connect the GitHub repo
-- [ ] `pnpm` build on Netlify (document Node version if needed)
-- [ ] Confirm `dist` publish
-- [ ] Form notifications to gracemashudi3@gmail.com (address is in `site.ts`; the Netlify notification is not set yet)
-- [ ] Production URL recorded in the README
+- [x] Connect the GitHub repo
+
+- [x] `pnpm` build on Netlify (document Node version if needed)
+
+- [x] Confirm `dist` publish
+
+- [x] Form notifications to [gracemashudi3@gmail.com](mailto:gracemashudi3@gmail.com) (address is in `site.ts`; a live test arrived)
+
+- [x] Production URL recorded in the README: [https://gracemashudi3-sys-dev-portfolio.netlify.app/](https://gracemashudi3-sys-dev-portfolio.netlify.app/)
 
 ### Docs
 
-- [ ] README: scripts, how to edit content, how forms work
-- [ ] Mark sprint items `[x]` as they ship
-- [ ] Product stays 1.1 and technical stays 1.0 until a decision changes
+- [x] README: scripts, how to edit content, how forms work
+- [x] Mark sprint items `[x]` as they ship
+- [x] Product stays 1.1 and technical stays 1.0 until a decision changes
 
 ### Acceptance criteria
 
@@ -411,7 +415,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-07 — The contact address in `site.ts` is gracemashudi3@gmail.com, so the mailto fallback can render. LinkedIn is omitted until a real profile URL exists. `index.html` has Open Graph title and description tags. There is no Open Graph image. `pnpm build` succeeds. The app is committed and pushed on `cursor/align-docs-with-site` (`28a244f`). `origin/main` still does not contain the app. This machine has no Netlify login, so the site is not connected, the form has not been tested on a deploy preview, and Phase 7 is not started. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project.
+**Last verified:** 2026-11-08 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. There is no Open Graph image. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project.
 
 ## Phase 0 — Foundation
 
@@ -447,17 +451,23 @@ These should not block the first public URL:
 
 - [x] Contact form, honeypot, and mailto fallback
 - [x] Footer copyright year
-- [ ] Netlify deploy-preview form test
+- [x] Netlify deploy-preview form test
 
 ## Phase 6 — Polish
 
 - [x] Section enter motion, card and button hover, focus outline
 - [x] Heading order, contrast, `lang`, and favicon checked
-- [ ] Open Graph image
+- [x] Open Graph image
 
-## Phases 7–8
+## Phase 7 — Deploy and README
+
+- [x] Live at https://gracemashudi3-sys-dev-portfolio.netlify.app/
+
+## Phase 8 — Optional extras
 
 - [ ] Not started
+
+
 
 ## Documentation (this slice)
 
@@ -475,11 +485,11 @@ These should not block the first public URL:
 3. Phase 2 — done (hero and about)
 4. Phase 3 — done (process, skills, and services)
 5. Phase 4 — done (Bank featured card; more-work table hidden while empty)
-6. Phase 5 — form is built; still needs a Netlify deploy-preview test
+6. Phase 5 — done. The live form test arrived at gracemashudi3@gmail.com
 7. Phase 6 — done, except an Open Graph image
-8. Phase 7 — connect Netlify to `cursor/align-docs-with-site`, set the form notification, and test the form. The app is already on that branch. `origin/main` still does not contain it.
+8. Phase 7 — done. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/
 9. LinkedIn is omitted from `site.ts` until a real profile URL exists
-10. Phase 8 only after a public URL exists
+10. Phase 8 is optional and not started
 
 ```
 
