@@ -469,7 +469,7 @@ The address is in `site.ts`. Notifications are set to gracemashudi3@gmail.com. P
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22.12.0"
+  NODE_VERSION = "20.20.2"
 
 # SPA fallback only if client routes exist (Phase 8)
 ```
