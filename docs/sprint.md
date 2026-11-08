@@ -261,7 +261,7 @@ Anything not marked `[x]` has **not** been built.
 ### Assets
 
 - [x] Original favicon (not the Vite logo)
-- [x] Optional OG image (`TODO` until designed)
+- [ ] Optional OG image (`TODO` until designed)
 
 ### Acceptance criteria
 
@@ -457,7 +457,7 @@ These should not block the first public URL:
 
 - [x] Section enter motion, card and button hover, focus outline
 - [x] Heading order, contrast, `lang`, and favicon checked
-- [x] Open Graph image
+- [ ] Open Graph image
 
 ## Phase 7 — Deploy and README
 

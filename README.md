@@ -53,7 +53,7 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 
 ## Deploy
 
-Production: [https://gracemashudi3-sys-dev-portfolio.netlify.app/]
+Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
 
 `netlify.toml` builds with `pnpm build` and publishes `dist`. Netlify is set to Node 22.12.0, which matches `engines` in `package.json`. There is no SPA rewrite, because the MVP has no client routes.
 

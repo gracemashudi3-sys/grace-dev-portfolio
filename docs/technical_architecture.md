@@ -288,8 +288,7 @@ Netlify form detection (build) / AJAX POST (SPA)
   │
   ▼
 Netlify notification email → gracemashudi3@gmail.com
-  (address is in site.ts; the Netlify notification setting is still unset)
-  
+  (address is in site.ts; notifications are set, and a test from https://gracemashudi3-sys-dev-portfolio.netlify.app/ arrived)
 
 ```
 
