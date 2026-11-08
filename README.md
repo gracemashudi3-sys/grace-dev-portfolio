@@ -17,7 +17,7 @@ There is no application server, database, or client router in the MVP. Sections 
 
 ## Requirements
 
-- Node.js 22.12 or newer
+- Node.js 20.19+ (20.20.2 pinned in `.nvmrc`), or 22.12+
 - pnpm 12 (`packageManager` in `package.json`; Corepack can install it with `corepack pnpm`)
 
 ## Scripts
@@ -55,7 +55,7 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 
 Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
 
-`netlify.toml` builds with `pnpm build` and publishes `dist`. Netlify is set to Node 22.12.0, which matches `engines` in `package.json`. There is no SPA rewrite, because the MVP has no client routes.
+`netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. There is no SPA rewrite, because the MVP has no client routes.
 
 There are no required environment variables. `.env.example` notes the `VITE_` prefix if a public variable is added later. Do not put secrets in any `VITE_` variable.
 
