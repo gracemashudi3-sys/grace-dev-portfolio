@@ -1,6 +1,9 @@
 [build]
-  command = "pnpm build"
+  # Run pnpm through Corepack so the build works even when no global pnpm
+  # shim is on PATH. The install is a no-op when dependencies are already present.
+  command = "corepack pnpm install --frozen-lockfile && corepack pnpm build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22.12.0"
+  NODE_VERSION = "20.20.2"
+  COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
