@@ -11,7 +11,13 @@ export const site = {
     openToWork: false,
   },
   email: "gracemashudi3@gmail.com",
-  socials: [{ label: "GitHub", href: "https://github.com/gracemashudi3-sys" }],
+  socials: [
+    { label: "GitHub", href: "https://github.com/gracemashudi3-sys" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/grace-mashudi-210640417",
+    },
+  ],
   documentTitle: "Grace Mashudi — Learning Java and TypeScript",
   description:
     "Grace Mashudi is in Nairobi, at the start of her tech journey. She is learning Java, knows a little TypeScript, and has finished Bank, a Java desktop project.",

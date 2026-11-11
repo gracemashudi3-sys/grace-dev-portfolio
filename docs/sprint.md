@@ -490,7 +490,7 @@ These should not block the first public URL:
 6. Phase 5 — done. The live form test arrived at gracemashudi3@gmail.com
 7. Phase 6 — done, including the Open Graph image
 8. Phase 7 — done. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/
-9. LinkedIn is omitted from `site.ts` until a real profile URL exists
+9. LinkedIn is https://www.linkedin.com/in/grace-mashudi-210640417
 10. GitHub Actions and the time / project-split unit tests are in place
 11. Phase 8 project pages and the theme toggle are in place. Events and the creator strip are not started
 

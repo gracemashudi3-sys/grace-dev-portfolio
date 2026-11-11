@@ -47,7 +47,7 @@ Copy, facts, skills, services, and projects live in `src/content/`. Later layout
 - `contact.ts` — contact intro, field labels, thank-you, and the form error
 - `types.ts` — shared TypeScript shapes
 
-The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://github.com/gracemashudi3-sys. LinkedIn is omitted until a real profile URL exists. Do not invent a live URL for Bank. Leave `liveUrl` unset until a real host exists.
+The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://github.com/gracemashudi3-sys. LinkedIn points at https://www.linkedin.com/in/grace-mashudi-210640417. Do not invent a live URL for Bank. Leave `liveUrl` unset until a real host exists.
 
 `index.html` holds the title and description used before JavaScript runs. Keep them aligned with `site.documentTitle` and `site.description`.
 
