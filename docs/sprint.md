@@ -474,7 +474,7 @@ These should not block the first public URL:
 ## Documentation (this slice)
 
 - [x] `docs/product_architecture.md` v1.1
-- [x] `docs/technical_architecture.md` v1.0
+- [x] `docs/technical_architecture.md` v1.1
 - [x] `docs/sprint.md` v1.0
 
 ---
