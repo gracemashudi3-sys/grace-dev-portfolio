@@ -326,8 +326,8 @@ Anything not marked `[x]` has **not** been built.
 
 ### Engineering extras
 
-- [ ] GitHub Actions: lint, typecheck, build
-- [ ] Unit tests for `time.ts` and project splitting
+- [x] GitHub Actions: lint, typecheck, test, build
+- [x] Unit tests for `time.ts` and project splitting
 - [ ] Pre-render if SEO audit demands it
 
 ### Acceptance criteria
@@ -415,7 +415,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-11 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. `public/og-image.png` is wired in `index.html`; the live site shows it after the next deploy. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project.
+**Last verified:** 2026-11-11 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. `public/og-image.png` is wired in `index.html`; the live site shows it after the next deploy. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project. GitHub Actions runs lint, typecheck, test, and build. Unit tests cover Nairobi time formatting and the featured/rest project split.
 
 ## Phase 0 — Foundation
 
@@ -465,7 +465,8 @@ These should not block the first public URL:
 
 ## Phase 8 — Optional extras
 
-- [ ] Not started
+- [x] GitHub Actions and unit tests for time and project splitting
+- [ ] Project pages, events, creator strip, and theme toggle
 
 
 
@@ -489,7 +490,8 @@ These should not block the first public URL:
 7. Phase 6 — done, including the Open Graph image
 8. Phase 7 — done. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/
 9. LinkedIn is omitted from `site.ts` until a real profile URL exists
-10. Phase 8 is optional and not started
+10. GitHub Actions and the time / project-split unit tests are in place
+11. Phase 8 product extras (project pages, events, theme) are not started
 
 ```
 

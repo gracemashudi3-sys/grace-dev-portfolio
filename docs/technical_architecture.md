@@ -432,11 +432,13 @@ Vite SPA: crawlers that execute JS will see content; for a portfolio this is acc
 pnpm dev        Vite
 pnpm build      tsc --noEmit && vite build
 pnpm preview    vite preview
-pnpm lint       Biome or ESLint (chosen in Phase 0)
+pnpm lint       Biome
+pnpm test       Vitest
+pnpm typecheck  tsc --noEmit
 
 ```
 
-CI (Should Have): GitHub Actions on push — install, lint, typecheck, build.
+CI: GitHub Actions (`.github/workflows/ci.yml`) on push and pull request — frozen install, lint, typecheck, test, and build, on Node 20.20.2. `pnpm lint` is Biome via [biome.json](../biome.json): 2-space indent, gitignore respected, Markdown left as written.
 
 Netlify production: `pnpm build`, publish directory `dist`.
 
@@ -498,9 +500,9 @@ MVP is thin on tests because there is almost no business logic.
 Must
   └── Manual: every section, mobile width, form on a Netlify preview
 
-Should
-  └── Unit: Nairobi time formatter
-  └── Unit: featured vs table split helper (if extracted)
+In place
+  └── Unit: Nairobi time formatter (`src/lib/time.test.ts`)
+  └── Unit: featured vs table split (`src/lib/projects.test.ts`)
 
 Later
   └── Component tests for the form states
@@ -592,8 +594,7 @@ Optional later
   ├── MDX case studies
   ├── Pre-render / SSG
   ├── Formspree or a tiny function if leaving Netlify
-  ├── CMS if updates become frequent
-  └── Light CI (lint, typecheck, build)
+  └── CMS if updates become frequent
 
 ```
 

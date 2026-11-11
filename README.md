@@ -27,6 +27,7 @@ pnpm install
 pnpm dev        # local dev server
 pnpm lint       # Biome
 pnpm typecheck  # tsc --noEmit
+pnpm test       # Vitest: Nairobi time and project split
 pnpm build      # typecheck, then Vite build to dist/
 pnpm preview    # serve the production build
 ```
@@ -54,6 +55,8 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 ## Deploy
 
 Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
+
+GitHub Actions (`.github/workflows/ci.yml`) runs lint, typecheck, test, and build on push and pull request. Node is 20.20.2, the same version as Netlify.
 
 `netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. There is no SPA rewrite, because the MVP has no client routes.
 
