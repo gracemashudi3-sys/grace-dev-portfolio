@@ -12,5 +12,6 @@ export const projects = [
     stack: ["Java", "MySQL"],
     featured: true,
     sourceUrl: "https://github.com/gracemashudi3-sys/Bank",
+    imageSrc: "/bank-login.png",
   },
 ] satisfies Project[];

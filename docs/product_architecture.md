@@ -373,7 +373,7 @@ Role (if not solo)
 Stack chips
 Live URL          none (desktop app, not hosted)
 Source URL        https://github.com/gracemashudi3-sys/Bank
-Image / screenshot TODO
+Image / screenshot /bank-login.png
 
 ```
 
