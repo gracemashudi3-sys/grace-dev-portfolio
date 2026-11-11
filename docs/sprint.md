@@ -321,8 +321,8 @@ Anything not marked `[x]` has **not** been built.
 
 ### Theme
 
-- [ ] Light / dark / system toggle
-- [ ] Persistence (`localStorage`)
+- [x] Light / dark / system toggle
+- [x] Persistence (`localStorage`)
 
 ### Engineering extras
 
@@ -415,7 +415,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-11 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. `public/og-image.png` is wired in `index.html`. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project. GitHub Actions runs lint, typecheck, test, and build. Unit tests cover Nairobi time formatting, the featured/rest project split, and slug lookup. `/projects/:slug` reads `projects.ts`. Bank’s page is `/projects/bank`. Netlify rewrites `/*` to `/index.html`.
+**Last verified:** 2026-11-11 — The header theme control offers dark, light, and system. The choice is stored in `localStorage` and applied before first paint. Dark stays the default. Events and the creator strip are still unbuilt. Production remains https://gracemashudi3-sys-dev-portfolio.netlify.app/.
 
 ## Phase 0 — Foundation
 
@@ -467,7 +467,7 @@ These should not block the first public URL:
 
 - [x] GitHub Actions and unit tests for time and project splitting
 - [x] Project pages: `/projects/:slug` from `projects.ts`, with the Netlify SPA rewrite
-- [ ] Events, creator strip, and theme toggle
+- [ ] Events and creator strip
 
 
 
@@ -492,7 +492,7 @@ These should not block the first public URL:
 8. Phase 7 — done. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/
 9. LinkedIn is omitted from `site.ts` until a real profile URL exists
 10. GitHub Actions and the time / project-split unit tests are in place
-11. Phase 8 project pages are in place (`/projects/:slug`, Netlify rewrite). Events, creator strip, and theme toggle are not started
+11. Phase 8 project pages and the theme toggle are in place. Events and the creator strip are not started
 
 ```
 

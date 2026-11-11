@@ -1,6 +1,7 @@
 import { site } from "../../content/site";
 import { NairobiClock } from "./NairobiClock";
 import { StatusPill } from "./StatusPill";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { label: "About", href: "/#about" },
@@ -22,6 +23,7 @@ export function Header() {
             {site.name}
           </a>
           <div className="flex flex-wrap items-center gap-3 sm:order-3 sm:shrink-0">
+            <ThemeToggle />
             <StatusPill label={site.status.label} />
             <NairobiClock key={site.timezone} timeZone={site.timezone} />
           </div>
