@@ -7,3 +7,9 @@
 [build.environment]
   NODE_VERSION = "20.20.2"
   COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
+
+# Client routes such as /projects/:slug. Existing files are still served as files.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

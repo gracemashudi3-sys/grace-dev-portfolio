@@ -1,6 +1,6 @@
 # Grace Mashudi — Technical Architecture
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Draft  
 **Architecture:** TypeScript SPA / Static Web  
 **Primary Runtime:** Browser (Vite dev server locally)  
@@ -17,9 +17,9 @@ This repository delivers Grace Mashudi’s public portfolio as a **statically ge
 
 The system provides:
 
-- A single-page marketing site
+- A single-page marketing site, plus one route per project record
 - Typed content for copy, skills, and projects
-- In-page navigation
+- In-page navigation on the home page
 - A contact form handled by the host
 - A production deploy on Netlify
 
@@ -120,11 +120,16 @@ grace-dev-portfolio/
 │   │   └── contact.ts
 │   ├── components/
 │   │   ├── layout/
+│   │   ├── projects/
 │   │   ├── ui/
 │   │   └── sections/
 │   ├── lib/
 │   │   ├── time.ts          Nairobi clock
-│   │   └── projects.ts      featured vs rest
+│   │   └── projects.ts      featured vs rest, slug lookup
+│   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   ├── ProjectPage.tsx
+│   │   └── NotFoundPage.tsx
 │   ├── styles/
 │   │   └── index.css        Tailwind entry + tokens
 │   ├── App.tsx
@@ -158,6 +163,7 @@ There is no `apps/` monorepo and no `packages/` workspace in MVP. One app is the
 ### Technology
 
 - React 19
+- React Router
 - TypeScript
 - Vite
 - Tailwind CSS
@@ -165,9 +171,16 @@ There is no `apps/` monorepo and no `packages/` workspace in MVP. One app is the
 
 ### Routing
 
-MVP: **no router**. Sections are `id`s. The header uses `href="#work"` style links.
+Home sections are `id`s. The header uses root-relative hashes (`href="/#work"`) so those links still open the home page from a project route.
 
-Phase 8 may add React Router (or Vite file routes) for `/projects/:slug`. Until then, do not add a router “for the stack.”
+React Router serves project records:
+
+```text
+/                  home
+/projects/:slug    one record from projects.ts
+```
+
+An unknown slug, or any other unknown path, renders a short not-found with a link home. Do not add routes for events, a blog, or a theme.
 
 ---
 
@@ -395,7 +408,8 @@ Auth, RBAC, CORS on an API, session cookies, rate limits on application routes. 
 | Missing optional URL | omit the control |
 | Form network error | stay on the form, show retry |
 | Unknown hash | browser default; no custom 404 for hashes |
-| Host 404 | Netlify `/* → /index.html` only if a router is added; MVP has no client routes, so 404 can be Netlify’s default for unknown files |
+| Unknown project slug | short not-found with a link home |
+| Host 404 | Netlify `/* → /index.html` so a direct visit to `/projects/:slug` loads the app. Files that exist are still served as files |
 
 ---
 
@@ -473,7 +487,10 @@ The address is in `site.ts`. Notifications are set to gracemashudi3@gmail.com. P
 [build.environment]
   NODE_VERSION = "20.20.2"
 
-# SPA fallback only if client routes exist (Phase 8)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 ```
 
 Custom domain is optional. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/.
@@ -532,7 +549,7 @@ Do not add a full Testing Library suite in Phase 0.
 | UI | React 19 |
 | Build | Vite |
 | Styling | Tailwind CSS |
-| Routing | In-page anchors (no router in MVP) |
+| Routing | In-page anchors, plus `/projects/:slug` |
 | Content | Typed TS modules |
 | Forms | Netlify Forms |
 | Host | Netlify |
@@ -559,7 +576,7 @@ Anything shipped to the browser is public.
 
 ### Principle 4 — Progressive complexity
 
-No router, query cache, CMS, or UI kit until a concrete problem appears.
+No query cache, CMS, or UI kit until a concrete problem appears. The only client routes are project pages.
 
 ### Principle 5 — Original surface
 
@@ -576,7 +593,7 @@ Email is Netlify’s job. Do not stand up an Express inbox for MVP.
 | Decision | Reason |
 | --- | --- |
 | SPA, not Next.js | Chosen stack: Vite + React; no SSR requirement |
-| No router in MVP | One page; hashes are enough |
+| Client routes for project pages only | Home stays one page of anchors; `/projects/:slug` reads `projects.ts` |
 | Content in TS | Type safety, PR review, no CMS ops |
 | Netlify Forms | Same host as the site; no extra vendor in MVP |
 | pnpm | Workspace-ready if the repo later grows |
@@ -589,8 +606,10 @@ Email is Netlify’s job. Do not stand up an Express inbox for MVP.
 # 24. Future architecture (not MVP)
 
 ```text
+In place
+  └── /projects/:slug from the same projects.ts record
+
 Optional later
-  ├── React Router project pages
   ├── MDX case studies
   ├── Pre-render / SSG
   ├── Formspree or a tiny function if leaving Netlify

@@ -308,10 +308,10 @@ Anything not marked `[x]` has **not** been built.
 
 ### Project pages
 
-- [ ] Router
-- [ ] `/projects/:slug`
-- [ ] Netlify `/* → /index.html` rewrite
-- [ ] Case-study layout from the same `projects.ts` record
+- [x] Router
+- [x] `/projects/:slug`
+- [x] Netlify `/* → /index.html` rewrite
+- [x] Case-study layout from the same `projects.ts` record
 
 ### Events / creator
 
@@ -415,7 +415,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-11 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. `public/og-image.png` is wired in `index.html`; the live site shows it after the next deploy. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project. GitHub Actions runs lint, typecheck, test, and build. Unit tests cover Nairobi time formatting and the featured/rest project split.
+**Last verified:** 2026-11-11 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. `public/og-image.png` is wired in `index.html`. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project. GitHub Actions runs lint, typecheck, test, and build. Unit tests cover Nairobi time formatting, the featured/rest project split, and slug lookup. `/projects/:slug` reads `projects.ts`. Bank’s page is `/projects/bank`. Netlify rewrites `/*` to `/index.html`.
 
 ## Phase 0 — Foundation
 
@@ -466,7 +466,8 @@ These should not block the first public URL:
 ## Phase 8 — Optional extras
 
 - [x] GitHub Actions and unit tests for time and project splitting
-- [ ] Project pages, events, creator strip, and theme toggle
+- [x] Project pages: `/projects/:slug` from `projects.ts`, with the Netlify SPA rewrite
+- [ ] Events, creator strip, and theme toggle
 
 
 
@@ -491,7 +492,7 @@ These should not block the first public URL:
 8. Phase 7 — done. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/
 9. LinkedIn is omitted from `site.ts` until a real profile URL exists
 10. GitHub Actions and the time / project-split unit tests are in place
-11. Phase 8 product extras (project pages, events, theme) are not started
+11. Phase 8 project pages are in place (`/projects/:slug`, Netlify rewrite). Events, creator strip, and theme toggle are not started
 
 ```
 

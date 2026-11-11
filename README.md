@@ -6,6 +6,7 @@ Public portfolio for Grace Mashudi, who is early in her tech journey. She is lea
 ## Stack
 
 - React 19
+- React Router (`/` and `/projects/:slug`)
 - TypeScript
 - Vite
 - Tailwind CSS
@@ -13,7 +14,7 @@ Public portfolio for Grace Mashudi, who is early in her tech journey. She is lea
 - pnpm
 - Host: Netlify (static files in `dist`)
 
-There is no application server, database, or client router in the MVP. Sections are in-page anchors. The contact form posts to Netlify Forms. `pnpm preview` does not deliver mail.
+There is no application server or database. Home sections are in-page anchors. `/projects/:slug` is a client route for one record in `projects.ts` (Bank is `/projects/bank`). The contact form posts to Netlify Forms. `pnpm preview` does not deliver mail.
 
 ## Requirements
 
@@ -27,7 +28,7 @@ pnpm install
 pnpm dev        # local dev server
 pnpm lint       # Biome
 pnpm typecheck  # tsc --noEmit
-pnpm test       # Vitest: Nairobi time and project split
+pnpm test       # Vitest: Nairobi time, project split, and slug lookup
 pnpm build      # typecheck, then Vite build to dist/
 pnpm preview    # serve the production build
 ```
@@ -42,7 +43,7 @@ Copy, facts, skills, services, and projects live in `src/content/`. Later layout
 - `process.ts` — the five working steps, in order
 - `skills.ts` — two skill groups: Java, and TypeScript at a basic level
 - `services.ts` — what she is practicing, not a consultancy menu
-- `projects.ts` — Bank, the one featured project (`featured: true`), with a GitHub source link and no live URL
+- `projects.ts` — Bank, the one featured project (`featured: true`), with a GitHub source link and no live URL. The `slug` is the case-study path: `/projects/bank`
 - `contact.ts` — contact intro, field labels, thank-you, and the form error
 - `types.ts` — shared TypeScript shapes
 
@@ -58,7 +59,7 @@ Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
 
 GitHub Actions (`.github/workflows/ci.yml`) runs lint, typecheck, test, and build on push and pull request. Node is 20.20.2, the same version as Netlify.
 
-`netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. There is no SPA rewrite, because the MVP has no client routes.
+`netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. A rewrite from `/*` to `/index.html` (status 200) loads the app for `/projects/:slug`. Files that exist, including images, are still served as files. Netlify still accepts the contact form POST to `/`.
 
 There are no required environment variables. `.env.example` notes the `VITE_` prefix if a public variable is added later. Do not put secrets in any `VITE_` variable.
 

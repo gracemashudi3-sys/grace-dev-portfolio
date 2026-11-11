@@ -3,11 +3,11 @@ import { NairobiClock } from "./NairobiClock";
 import { StatusPill } from "./StatusPill";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Process", href: "#process" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Process", href: "/#process" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Work", href: "/#work" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export function Header() {
@@ -16,7 +16,7 @@ export function Header() {
       <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:contents">
           <a
-            href="#hero"
+            href="/#hero"
             className="shrink-0 font-semibold tracking-tight text-ink"
           >
             {site.name}

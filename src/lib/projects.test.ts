@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Project } from "../content/types";
-import { splitProjects } from "./projects";
+import { findProjectBySlug, splitProjects } from "./projects";
 
 function project(
   overrides: Partial<Project> & Pick<Project, "slug" | "featured">,
@@ -37,5 +37,21 @@ describe("splitProjects", () => {
 
     expect(featured).toHaveLength(1);
     expect(rest).toHaveLength(0);
+  });
+});
+
+describe("findProjectBySlug", () => {
+  const projects = [
+    project({ slug: "bank", featured: true }),
+    project({ slug: "notes", featured: false }),
+  ];
+
+  it("returns the record whose slug matches", () => {
+    expect(findProjectBySlug(projects, "bank")?.slug).toBe("bank");
+  });
+
+  it("returns undefined when the slug is missing or unknown", () => {
+    expect(findProjectBySlug(projects, undefined)).toBeUndefined();
+    expect(findProjectBySlug(projects, "missing")).toBeUndefined();
   });
 });
