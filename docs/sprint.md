@@ -261,7 +261,7 @@ Anything not marked `[x]` has **not** been built.
 ### Assets
 
 - [x] Original favicon (not the Vite logo)
-- [x] Optional OG image (`TODO` until designed)
+- [x] Open Graph image (`public/og-image.png`, 1200×630)
 
 ### Acceptance criteria
 
@@ -415,7 +415,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-08 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. There is no Open Graph image. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project.
+**Last verified:** 2026-11-11 — Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/, deployed from `main`. Form notifications go to gracemashudi3@gmail.com, and a test submission arrived. LinkedIn is omitted until a real profile URL exists. `public/og-image.png` is wired in `index.html`; the live site shows it after the next deploy. `https://grace-dev-portfolio.netlify.app` is a different site and is not this project.
 
 ## Phase 0 — Foundation
 
@@ -486,7 +486,7 @@ These should not block the first public URL:
 4. Phase 3 — done (process, skills, and services)
 5. Phase 4 — done (Bank featured card; more-work table hidden while empty)
 6. Phase 5 — done. The live form test arrived at gracemashudi3@gmail.com
-7. Phase 6 — done, except an Open Graph image
+7. Phase 6 — done, including the Open Graph image
 8. Phase 7 — done. Production is https://gracemashudi3-sys-dev-portfolio.netlify.app/
 9. LinkedIn is omitted from `site.ts` until a real profile URL exists
 10. Phase 8 is optional and not started

@@ -105,7 +105,7 @@ grace-dev-portfolio/
 │
 ├── public/
 │   ├── favicon.svg
-│   └── og-image.png         still missing
+│   └── og-image.png
 │
 ├── src/
 │   ├── content/
@@ -288,8 +288,7 @@ Netlify form detection (build) / AJAX POST (SPA)
   │
   ▼
 Netlify notification email → gracemashudi3@gmail.com
-  (address is in site.ts; the Netlify notification setting is still unset)
-  
+  (address is in site.ts; notifications are set, and a test from https://gracemashudi3-sys-dev-portfolio.netlify.app/ arrived)
 
 ```
 
@@ -419,7 +418,7 @@ index.html
   meta description
   og:title og:description
   twitter:card
-  og:image still absent until public/og-image.png exists
+  og:image public/og-image.png (1200×630)
 
 ```
 

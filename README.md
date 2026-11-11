@@ -49,17 +49,13 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 
 `index.html` holds the title and description used before JavaScript runs. Keep them aligned with `site.documentTitle` and `site.description`.
 
-`public/favicon.svg` is a temporary monogram. `index.html` includes `og:title`, `og:description`, and `twitter:card`. An Open Graph image is not in the repo yet, so there is no `og:image`.
+`public/favicon.svg` is the original monogram. `index.html` includes `og:title`, `og:description`, `og:image`, and `twitter:card` (`summary_large_image`). The share image is `public/og-image.png` (1200×630).
 
 ## Deploy
 
- cursor/record-production-url
-Production: [https://gracemashudi3-sys-dev-portfolio.netlify.app/]
-
-`netlify.toml` builds with `pnpm build` and publishes `dist`. Netlify is set to Node 22.12.0, which matches `engines` in `package.json`. There is no SPA rewrite, because the MVP has no client routes.
+Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
 
 `netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. There is no SPA rewrite, because the MVP has no client routes.
- main
 
 There are no required environment variables. `.env.example` notes the `VITE_` prefix if a public variable is added later. Do not put secrets in any `VITE_` variable.
 
