@@ -105,7 +105,7 @@ grace-dev-portfolio/
 │
 ├── public/
 │   ├── favicon.svg
-│   └── og-image.png         still missing
+│   └── og-image.png
 │
 ├── src/
 │   ├── content/
@@ -418,7 +418,7 @@ index.html
   meta description
   og:title og:description
   twitter:card
-  og:image still absent until public/og-image.png exists
+  og:image public/og-image.png (1200×630)
 
 ```
 

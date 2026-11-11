@@ -49,7 +49,7 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 
 `index.html` holds the title and description used before JavaScript runs. Keep them aligned with `site.documentTitle` and `site.description`.
 
-`public/favicon.svg` is a temporary monogram. `index.html` includes `og:title`, `og:description`, and `twitter:card`. An Open Graph image is not in the repo yet, so there is no `og:image`.
+`public/favicon.svg` is the original monogram. `index.html` includes `og:title`, `og:description`, `og:image`, and `twitter:card` (`summary_large_image`). The share image is `public/og-image.png` (1200×630).
 
 ## Deploy
 
