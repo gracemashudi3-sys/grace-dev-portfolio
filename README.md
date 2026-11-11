@@ -53,7 +53,18 @@ The email in `site.ts` is gracemashudi3@gmail.com. GitHub points at https://gith
 
 ## Deploy
 
+ cursor/update-canonical-and-og
+ cursor/update-canonical-and-og
 Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
+
+ cursor/record-production-url
+Production: [https://gracemashudi3-sys-dev-portfolio.netlify.app/]
+ main
+
+`netlify.toml` builds with `pnpm build` and publishes `dist`. Netlify is set to Node 22.12.0, which matches `engines` in `package.json`. There is no SPA rewrite, because the MVP has no client routes.
+
+Production: https://gracemashudi3-sys-dev-portfolio.netlify.app/
+ main
 
 `netlify.toml` builds with `corepack pnpm install --frozen-lockfile && corepack pnpm build` and publishes `dist`. Netlify is set to Node 20.20.2 (also in `.nvmrc`), which satisfies `engines` in `package.json` and bundles a Corepack recent enough to verify the pnpm download signature. There is no SPA rewrite, because the MVP has no client routes.
 

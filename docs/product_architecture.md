@@ -620,8 +620,13 @@ A page with no projects still ships: hero, about, process, skills, services, con
 ```text
 Document title     Grace Mashudi — Learning Java and TypeScript
 Meta description   Grace Mashudi is in Nairobi, at the start of her tech journey. She is learning Java, knows a little TypeScript, and has finished Bank, a Java desktop project.
+ cursor/update-canonical-and-og
+Canonical URL      https://gracemashudi3-sys-dev-portfolio.netlify.app/.
+Open Graph         title and description in index.html; image still TODO
+
 Canonical URL      https://gracemashudi3-sys-dev-portfolio.netlify.app/
 Open Graph         title, description, and og-image.png in index.html
+main
 Favicon            original mark
 
 ```
