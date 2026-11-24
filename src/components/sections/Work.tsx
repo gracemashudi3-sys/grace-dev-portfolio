@@ -13,11 +13,14 @@ function FeaturedCard({ project, solo }: { project: Project; solo: boolean }) {
   return (
     <article
       className={`surface-card rounded-md border border-border bg-surface p-4 ${
+        // One featured project would leave an empty cell in a two-column grid,
+        // so the screenshot sits beside the copy instead.
         solo ? "grid gap-6 lg:grid-cols-2 lg:items-center" : ""
       }`}
     >
       <ProjectImage name={project.name} imageSrc={project.imageSrc} />
       <div>
+        {/* Beside the image on a wide screen, the eyebrow needs no top gap. */}
         <p className={`text-xs text-muted ${solo ? "mt-4 lg:mt-0" : "mt-4"}`}>
           {project.eyebrow}
         </p>
@@ -44,6 +47,7 @@ function MoreWork({ projects: more }: { projects: Project[] }) {
   return (
     <div className="mt-12">
       <h3 className="text-sm font-semibold text-ink">More work</h3>
+      {/* Same records twice: a table from the md breakpoint, stacked cards below it. */}
       <div className="mt-4 hidden overflow-x-auto md:block">
         <table className="w-full border-collapse text-left text-sm">
           <thead>
@@ -106,6 +110,7 @@ function MoreWork({ projects: more }: { projects: Project[] }) {
 export function Work() {
   const { featured, rest } = splitProjects(projects);
 
+  // An empty project list should not leave a Work heading on the page.
   if (featured.length === 0 && rest.length === 0) {
     return null;
   }
@@ -114,6 +119,7 @@ export function Work() {
     <section id="work" className="section-block">
       <div className="mx-auto max-w-5xl">
         <SectionHeading>Work</SectionHeading>
+        {/* Hide the featured grid and the more-work block independently. */}
         {featured.length > 0 ? (
           <ul
             className={
