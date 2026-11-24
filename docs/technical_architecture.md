@@ -194,7 +194,7 @@ Example shapes (normative intent, exact fields may gain optionals):
 Site
   name, title, role, location, timezone, status
   email (gracemashudi3@gmail.com in site.ts)
-  socials (github set; linkedin omitted until a real URL exists)
+  socials (GitHub and LinkedIn, both set in site.ts)
   documentTitle, description
 
 Project
@@ -247,7 +247,7 @@ React
 
 ```
 
-Dark-first: the default canvas is near-black. A `.light` class (or `data-theme`) is reserved; the toggle is Should Have, not a Phase 0 requirement.
+Dark-first: the default canvas is near-black. The header toggle sets `data-theme` to dark, light, or system and stores the choice in `localStorage`. `index.html` applies that choice before first paint.
 
 Do not copy another site’s exact palette, type scale, or background artwork. Match the *intent* (dark, calm, high contrast) with original tokens.
 
@@ -598,7 +598,7 @@ Email is Netlify’s job. Do not stand up an Express inbox for MVP.
 | Netlify Forms | Same host as the site; no extra vendor in MVP |
 | pnpm | Workspace-ready if the repo later grows |
 | No monorepo | One app; Turborepo would be ceremony |
-| Dark-first CSS tokens | Product language; light theme later |
+| Dark-first CSS tokens | Default canvas stays dark; the header toggle adds light and system |
 | Clock in the client | Nairobi time is a chrome feature, not content |
 
 ---
@@ -607,7 +607,8 @@ Email is Netlify’s job. Do not stand up an Express inbox for MVP.
 
 ```text
 In place
-  └── /projects/:slug from the same projects.ts record
+  ├── /projects/:slug from the same projects.ts record
+  └── Header theme toggle: dark, light, or system, stored in localStorage
 
 Optional later
   ├── MDX case studies

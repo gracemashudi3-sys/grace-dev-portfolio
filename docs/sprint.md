@@ -290,7 +290,7 @@ Anything not marked `[x]` has **not** been built.
 
 - [x] README: scripts, how to edit content, how forms work
 - [x] Mark sprint items `[x]` as they ship
-- [x] Product stays 1.1 and technical stays 1.0 until a decision changes
+- [x] Product architecture and technical architecture are both 1.1, including the shipped LinkedIn URL, theme toggle, and project routes
 
 ### Acceptance criteria
 
@@ -400,12 +400,10 @@ Events, project detail pages, and a theme toggle are not MVP.
 
 # 23. Post-MVP features
 
-These should not block the first public URL:
+These did not block the first public URL. Project detail routes and the light theme toggle have shipped. Still later:
 
-- Project detail routes
 - Event photos
 - Creator / build-in-public strip
-- Light theme
 - CMS
 - Blog
 - Custom domain
@@ -415,7 +413,7 @@ These should not block the first public URL:
 
 # 24. Current project status
 
-**Last verified:** 2026-11-11 — The header theme control offers dark, light, and system. The choice is stored in `localStorage` and applied before first paint. Dark stays the default. Events and the creator strip are still unbuilt. Production remains https://gracemashudi3-sys-dev-portfolio.netlify.app/.
+**Last verified:** 2026-11-24 — Architecture docs match the shipped header theme control (dark, light, and system, stored in `localStorage`, applied before first paint; dark stays the default), the LinkedIn URL, and `/projects/:slug`. Events, the creator strip, and pre-rendering are still unbuilt. Production remains https://gracemashudi3-sys-dev-portfolio.netlify.app/.
 
 ## Phase 0 — Foundation
 

@@ -240,7 +240,7 @@ Act (open a project or contact)
 - Anchor links: About, Process, Skills, Work, Contact
 - A visible status from `site.ts` (currently “Learning”, not open to work), not buried copy
 - Local time for **Africa/Nairobi**, updated in the client
-- Dark-first visual language; a light theme is a later option, not MVP-blocking
+- Dark-first visual language. The header toggle offers dark, light, and system; dark stays the default, and the choice is stored in `localStorage`
 
 Chrome should work the same on a laptop and a phone. On a narrow screen, nav may collapse to a simple list or overlay. It must not hide the hero.
 
@@ -478,7 +478,7 @@ Page (one document)
 
 ```
 
-MVP is a **single page** with in-page anchors. Project detail routes are Phase 8.
+MVP is a **single page** with in-page anchors. Phase 8 project routes are in place: `/projects/:slug` reads the same `projects.ts` record. An unknown slug shows a short not-found with a link home.
 
 ---
 
@@ -662,7 +662,7 @@ Services cards
 Project content model (even if only TODOs)
 Featured cards + more-work table (hide if empty)
 Contact form to Grace’s inbox
-Footer with GitHub; LinkedIn omitted until a real URL exists
+Footer with GitHub and LinkedIn
 Responsive layout
 Accessible form and headings
 Netlify production URL
@@ -673,16 +673,22 @@ Netlify production URL
 
 ```text
 OG image
-Light theme toggle
 Reduced-motion respect beyond the default
 Project hover/focus polish
+
+```
+
+### Shipped after MVP
+
+```text
+Light theme toggle (dark, light, and system; stored in localStorage)
+Project detail routes (/projects/:slug)
 
 ```
 
 ### Later
 
 ```text
-Project detail routes
 Events photo strip
 Creator / build-in-public strip
 CMS
