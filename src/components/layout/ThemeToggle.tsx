@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
   applyThemeChoice,
-  isThemeChoice,
   readThemeChoice,
   type ThemeChoice,
   themeChoices,
@@ -22,24 +21,26 @@ export function ThemeToggle() {
   }
 
   return (
-    <label className="flex items-center gap-2 text-xs text-muted">
-      Theme
-      <select
-        value={choice}
-        onChange={(event) => {
-          const next = event.target.value;
-          if (isThemeChoice(next)) {
-            select(next);
-          }
-        }}
-        className="rounded-md border border-border bg-canvas px-2 py-1 text-sm text-ink"
-      >
-        {themeChoices.map((option) => (
-          <option key={option} value={option}>
+    <fieldset
+      aria-label="Theme"
+      className="m-0 inline-flex w-fit min-w-0 rounded-full border border-border bg-surface p-0.5"
+    >
+      {themeChoices.map((option) => {
+        const selected = option === choice;
+        return (
+          <button
+            key={option}
+            type="button"
+            aria-pressed={selected}
+            onClick={() => select(option)}
+            className={`rounded-full px-2 py-0.5 text-xs ${
+              selected ? "bg-canvas text-ink" : "text-muted hover:text-ink"
+            }`}
+          >
             {themeLabels[option]}
-          </option>
-        ))}
-      </select>
-    </label>
+          </button>
+        );
+      })}
+    </fieldset>
   );
 }

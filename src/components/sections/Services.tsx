@@ -1,4 +1,5 @@
 import { services } from "../../content/services";
+import { SectionHeading } from "../ui/SectionHeading";
 
 export function Services() {
   if (services.length === 0) {
@@ -8,7 +9,7 @@ export function Services() {
   return (
     <section id="services" className="section-block">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-xl font-semibold text-ink">Services</h2>
+        <SectionHeading>Services</SectionHeading>
         <ul className="mt-8 grid gap-4 lg:grid-cols-3">
           {services.map((service) => (
             <li

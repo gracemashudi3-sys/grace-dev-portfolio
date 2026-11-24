@@ -1,10 +1,11 @@
 import { about } from "../../content/about";
+import { SectionHeading } from "../ui/SectionHeading";
 
 export function About() {
   return (
     <section id="about" className="section-block">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-xl font-semibold text-ink">About</h2>
+        <SectionHeading>About</SectionHeading>
         <div className="mt-4 max-w-2xl space-y-4">
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph} className="text-muted">

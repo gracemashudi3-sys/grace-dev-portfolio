@@ -34,22 +34,24 @@ export function ProjectPage() {
             </a>
           </p>
           <p className="mt-6 text-xs text-muted">{project.eyebrow}</p>
-          <h1 className="mt-1 text-3xl font-semibold tracking-tight text-ink sm:text-5xl">
+          <h1 className="mt-1 text-3xl font-medium tracking-tight text-ink sm:text-5xl">
             {project.name}
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink">{project.summary}</p>
-          <div className="mt-8 max-w-3xl">
+          <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-start">
             <ProjectImage name={project.name} imageSrc={project.imageSrc} />
-          </div>
-          <p className="mt-6 max-w-xl text-muted">{project.description}</p>
-          {project.role ? (
-            <p className="mt-4 text-sm text-muted">Role: {project.role}</p>
-          ) : null}
-          <div className="mt-6">
-            <StackChips stack={project.stack} />
-          </div>
-          <div className="mt-6">
-            <ProjectLinks project={project} />
+            <div>
+              <p className="text-muted">{project.description}</p>
+              {project.role ? (
+                <p className="mt-4 text-sm text-muted">Role: {project.role}</p>
+              ) : null}
+              <div className="mt-6">
+                <StackChips stack={project.stack} />
+              </div>
+              <div className="mt-6">
+                <ProjectLinks project={project} />
+              </div>
+            </div>
           </div>
         </div>
       </article>

@@ -7,25 +7,34 @@ import {
   ProjectTitleLink,
   StackChips,
 } from "../projects/ProjectFacts";
+import { SectionHeading } from "../ui/SectionHeading";
 
-function FeaturedCard({ project }: { project: Project }) {
+function FeaturedCard({ project, solo }: { project: Project; solo: boolean }) {
   return (
-    <article className="surface-card rounded-md border border-border bg-surface p-4">
+    <article
+      className={`surface-card rounded-md border border-border bg-surface p-4 ${
+        solo ? "grid gap-6 lg:grid-cols-2 lg:items-center" : ""
+      }`}
+    >
       <ProjectImage name={project.name} imageSrc={project.imageSrc} />
-      <p className="mt-4 text-xs text-muted">{project.eyebrow}</p>
-      <h3 className="mt-1 text-lg font-semibold text-ink">
-        <ProjectTitleLink project={project} />
-      </h3>
-      <p className="mt-2 text-ink">{project.summary}</p>
-      <p className="mt-2 text-sm text-muted">{project.description}</p>
-      {project.role ? (
-        <p className="mt-2 text-sm text-muted">Role: {project.role}</p>
-      ) : null}
-      <div className="mt-4">
-        <StackChips stack={project.stack} />
-      </div>
-      <div className="mt-4">
-        <ProjectLinks project={project} />
+      <div>
+        <p className={`text-xs text-muted ${solo ? "mt-4 lg:mt-0" : "mt-4"}`}>
+          {project.eyebrow}
+        </p>
+        <h3 className="mt-1 text-lg font-semibold text-ink">
+          <ProjectTitleLink project={project} />
+        </h3>
+        <p className="mt-2 text-ink">{project.summary}</p>
+        <p className="mt-2 text-sm text-muted">{project.description}</p>
+        {project.role ? (
+          <p className="mt-2 text-sm text-muted">Role: {project.role}</p>
+        ) : null}
+        <div className="mt-4">
+          <StackChips stack={project.stack} />
+        </div>
+        <div className="mt-4">
+          <ProjectLinks project={project} />
+        </div>
       </div>
     </article>
   );
@@ -104,12 +113,16 @@ export function Work() {
   return (
     <section id="work" className="section-block">
       <div className="mx-auto max-w-5xl">
-        <h2 className="text-xl font-semibold text-ink">Work</h2>
+        <SectionHeading>Work</SectionHeading>
         {featured.length > 0 ? (
-          <ul className="mt-8 grid gap-4 lg:grid-cols-2">
+          <ul
+            className={
+              featured.length > 1 ? "mt-8 grid gap-4 lg:grid-cols-2" : "mt-8"
+            }
+          >
             {featured.map((project) => (
               <li key={project.slug}>
-                <FeaturedCard project={project} />
+                <FeaturedCard project={project} solo={featured.length === 1} />
               </li>
             ))}
           </ul>

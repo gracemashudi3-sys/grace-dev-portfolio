@@ -13,6 +13,8 @@
   --border: #3c4036;
   --radius: 0.75rem;
   --font-sans: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
   --section-space: 4rem;
   --header-offset: 9.5rem;
 }
@@ -129,6 +131,11 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
 }
 
 :focus-visible {

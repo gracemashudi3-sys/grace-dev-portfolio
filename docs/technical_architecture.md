@@ -244,8 +244,11 @@ React
 --border
 --radius
 --font-sans
+--font-heading
 
 ```
+
+`--font-heading` is Newsreader, latin weight 500, used for `h1` and `h2`. Body, nav, and form text stay on `--font-sans`.
 
 Dark-first: the default canvas is near-black. The header toggle sets `data-theme` to dark, light, or system and stores the choice in `localStorage`. `index.html` applies that choice before first paint.
 

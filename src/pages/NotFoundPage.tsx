@@ -11,7 +11,7 @@ export function NotFoundPage({
     <main id="content">
       <section className="section-block">
         <div className="mx-auto max-w-5xl">
-          <h1 className="text-3xl font-semibold tracking-tight text-ink">
+          <h1 className="text-3xl font-medium tracking-tight text-ink">
             {title}
           </h1>
           <p className="mt-4 text-muted">{message}</p>
